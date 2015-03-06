@@ -15,6 +15,7 @@ class Slide
   attr_accessor :title, :body 
   
   def initialize(options)
+    @id = options["id"]
     @title = options["title"]
     @body = options["body"]
   end
@@ -30,7 +31,7 @@ class Slide
                       WHERE id = '#{id}'")
   end
   
-  def find(order)
+  def self.find(id)
     result = DATABASE.execute("SELECT * FROM slides WHERE id = #{id}")[0]
     
     self.new(result)

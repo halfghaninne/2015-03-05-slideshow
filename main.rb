@@ -13,4 +13,9 @@ get "/" do
 end
 
 get "/slide/:id" do
+  id = params[:id]
+  slide = Slide.find(id)
+  
+  slide_hash = slide.to_hash
+  slide_hash.to_json
 end
