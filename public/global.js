@@ -27,26 +27,39 @@ window.onload = function() { //think i might factor this function out eventually
     // skeleton for the next click:
 //////////////////////////////////////////////////////////////
     
-  var getNext = document.getElementbyID("next");
-
-
-  getNext.addEventListener("click", getNextPage);
+window.onload = function() {    //this notation may be problematic later
   
+  var getNext = document.getElementById("next"); //=>HTML element
+  
+  var slide_count_string = getNext.getAttribute("value");
+  
+  var slide_count = parseInt(slide_count_string, 10); //=>number
+  
+  getNext.addEventListener("click", getNextPage); //runs function on click of HTML anchor element
+
   function getNextPage() {
     currentSlide ++
-    if currentSlide > SOMEVARIABLE {
-      currentSlide = 1
-    } //end of if loop
-    
+    // if currentSlide > slide_count {
+    //   currentSlide = 1
+    // } //end of if loop
+
     var request = new XMLHttpRequest;
-  
+
     request.open("post", "/slide/" + currentSlide);
-  
+
     request.send();
-    
+
     request.addEventListener("load", singleSlideParse);
 
   } //end of getNextPage
+  
+
+} //end of second window.onload
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////
 
