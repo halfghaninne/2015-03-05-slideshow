@@ -11,3 +11,6 @@ require_relative "models/slide.rb"
 get "/" do 
   erb :homepage
 end
+
+get "/slide/:id" do
+end
