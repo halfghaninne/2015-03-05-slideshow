@@ -7,7 +7,15 @@
   <body>
     <p>The current time is <strong><%= Time.now %></strong>.</p>
     
-    <a href="slide/1">Start Slideshow</a>
+     <div class="slidebox">
+       <h1 id="title">Title goes here</h1>
+       <p id="body">Text body goes here.</p>
+     </div>
+     
+      
+      <a href="javascirpt:void(0)" id="previous" onclick="goBack()">Previous</a>
+      
+      <a href="javascript:void(0)" id="next" onclick="getNextPage()" > Next </a>
     
   </body>
 </html>

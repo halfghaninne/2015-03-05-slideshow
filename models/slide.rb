@@ -12,7 +12,7 @@ class Slide
   
   attr_reader :id
   
-  attr_accessor :title, :body 
+  attr_accessor :title, :body #ADD ORDER IN LATER IT NEEDS ITS OWN VARIABLE
   
   def initialize(options)
     @id = options["id"]
@@ -36,6 +36,13 @@ class Slide
     
     self.new(result)
   end
+  
+  #
+  #
+  #
+  #
+  #
+  #
   
   def self.all
     results = DATABASE.execute("SELECT * FROM slides")

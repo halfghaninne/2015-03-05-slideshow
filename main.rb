@@ -12,7 +12,15 @@ get "/" do
   erb :homepage
 end
 
-get "/slide/:id" do
+get "/slides" do
+  @all_slides = Slides.all.length
+  
+  slides_hash = all_slides.map {|s| s.to_hash}
+  slides_hash.to_json
+end
+
+
+post "/slide/:id" do
   id = params[:id]
   slide = Slide.find(id)
   
