@@ -5,6 +5,9 @@ require 'sinatra'
 require 'pry'
 require 'sqlite3'
 require 'json'
+require 'sinatra/activerecord'
+
+set :database, {adapter: 'sqlite3', database: 'slideshow.db'}
 
 DATABASE = SQLite3::Database.new("slideshow.db")
 
