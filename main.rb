@@ -11,9 +11,9 @@ set :database, {adapter: 'sqlite3', database: 'slideshow.db'}
 
 DATABASE = SQLite3::Database.new("slideshow_w_users.db")
 
-require_relative "models/database_setup.rb"
 require_relative "models/slide.rb"
-
+require_relative "models/user.rb"
+require_relative "models/database_setup.rb"
 
 
 
