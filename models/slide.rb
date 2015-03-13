@@ -12,12 +12,13 @@ class Slide < ActiveRecord::Base
   
   belongs_to :user
   
+  
   def to_hash
     {
       id: id,
       title: title,
       body: body,
-      user_id: user_id,
+      user_id: user_id
     }
   end
   
