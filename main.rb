@@ -9,10 +9,13 @@ require 'sinatra/activerecord'
 
 set :database, {adapter: 'sqlite3', database: 'slideshow.db'}
 
-DATABASE = SQLite3::Database.new("slideshow.db")
+DATABASE = SQLite3::Database.new("slideshow_w_users.db")
 
 require_relative "models/database_setup.rb"
 require_relative "models/slide.rb"
+
+
+
 
 get "/" do 
   @slide_count = Slide.all.length

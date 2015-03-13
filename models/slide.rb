@@ -10,13 +10,21 @@ require 'sqlite3'
 
 class Slide < ActiveRecord::Base
   
+  belongs_to :user
+  
   def to_hash
     {
       id: id,
       title: title,
       body: body,
+      user_id: user_id,
     }
   end
+  
+  # def add_user
+  #   DATABASE.execute("ALTER TABLE slides ADD COLUMN (user )")
+  # end
 
 end
 
+binding.pry
