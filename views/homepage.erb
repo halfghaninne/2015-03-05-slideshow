@@ -5,15 +5,28 @@
     <title>Practice Slideshow</title>
   </head>
   <body>
+    <h3>Practice Slideshow</h3>
     <p>The current time is <strong><%= Time.now %></strong>.</p>
     
+    <% if  @user.id == nil %>
+    <a href="/login" class="login_link">Click here to login</a><br>
+    <% else %>
+    <p>Hey <%= @user.name %></p>
+    <% end %>
+    
+    <!-- <div class="login" style="display: none">
+      <form action="/login_auth"> 
+        <input></input>
+        <input></input>
+      </form>
+    </div>
      <div class="slidebox">
        <h1 id="title"></h1>
        <p id="body"></p>
-     </div>
+     </div> -->
      
       
-      <a href="javascirpt:void(0)" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
+      <a href="javascript:void(0)" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
       
       <a href="javascript:void(0)" id="next" value ="<%= @slide_count %>" onclick="getNextPage()"> Next </a>
     

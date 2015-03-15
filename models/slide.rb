@@ -21,10 +21,6 @@ class Slide < ActiveRecord::Base
       user_id: user_id
     }
   end
-  
-  # def add_user
-  #   DATABASE.execute("ALTER TABLE slides ADD COLUMN (user)")
-  # end
 
 end
 

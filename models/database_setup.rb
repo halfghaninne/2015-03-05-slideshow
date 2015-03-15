@@ -11,5 +11,6 @@ DATABASE.execute("CREATE TABLE IF NOT EXISTS slides
                   (id INTEGER PRIMARY KEY,
                   title TEXT, 
                   body TEXT,
+                  user_id INTEGER,
                   FOREIGN KEY(user_id) REFERENCES users(id))")
                   

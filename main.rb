@@ -15,8 +15,6 @@ require_relative "models/slide.rb"
 require_relative "models/user.rb"
 require_relative "models/database_setup.rb"
 
-
-
 get "/" do 
   @slide_count = Slide.all.length
   
@@ -30,11 +28,27 @@ get "/slides" do
   slides_hash.to_json
 end
 
-
 post "/slide/:id" do
   id = params[:id]
   slide = Slide.find(id)
   
   slide_hash = slide.to_hash
   slide_hash.to_json
+end
+
+get "/login" do
+  erb :login
+end
+
+post "/login_auth/" do
+  @user = User.find_by_name(params[:name])
+  
+  binding.pry
+  
+  if @user.password == params[:password]
+    redirect "/"
+  else
+    redirect "/login"
+  end
+  
 end
