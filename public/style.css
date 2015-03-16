@@ -1,0 +1,21 @@
+h3 {
+  color: red;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.nav_bar li {
+  list-style: none;
+  float: left;
+  display: inline block;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.slide_nav a {
+  padding-right: 8px;
+  padding-left: 8px;
+}

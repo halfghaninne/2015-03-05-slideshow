@@ -25,7 +25,7 @@ end
 
 get "/" do 
   @slide_count = Slide.all.length
-  binding.pry
+
   erb :homepage
 end
 
@@ -58,4 +58,12 @@ post "/login_auth/" do
     redirect "/login"
   end
   
+end
+
+get "/logout" do
+  
+  session[:user_id] = nil
+  @user = nil
+  
+  redirect "/"
 end

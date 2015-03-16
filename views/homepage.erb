@@ -2,16 +2,34 @@
 <html>
   <head>
     <script type="text/javascript" src="global.js"></script>
+    <link rel="stylesheet" href="/style.css" type="text/css"            charset="utf-8">
     <title>Practice Slideshow</title>
   </head>
   <body>
-    <h3>Practice Slideshow</h3>
-    <p>The current time is <strong><%= Time.now %></strong>.</p>
+    
+    <div>
+      <h3>Practice Slideshow</h3>
+      <p>The current time is <strong><%= Time.now %></strong>.</p>
+    </div>
     
     <% if  @user %>
-    <p>Hey <%= @user.name %></p>
+    
+      <div class="user_block">
+        <ul class="nav_bar">
+          <nav>
+          <li>Hey <%= @user.name %>!</li>
+          <li><a href="#">My Slides</a></li>
+          <li><a href="/logout">Logout</a><li>
+          </nav>
+        </ul>
+        <br>
+      </div>
+      
     <% else %>
-    <a href="/login" class="login_link">Click here to login</a><br>
+      <div>
+        <a href="/login" class="login_link">Click here to login</a>
+      </div>
+      <br>
     <% end %>     
     
     <div class="slidebox">
@@ -19,9 +37,12 @@
       <p id="body"></p>
     </div>
       
+    <div class="slide_nav">
       <a href="#" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
       
       <a href="#" id="next" value ="<%= @slide_count %>" onclick="getNextPage()"> Next </a>
+    </div>
+    
     
   </body>
 </html>
