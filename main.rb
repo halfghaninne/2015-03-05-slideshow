@@ -3,6 +3,7 @@ require 'bundler/setup'
 
 require 'sinatra'
 require 'pry'
+require 'bcrypt'
 require 'sqlite3'
 require 'json'
 require 'sinatra/activerecord'
@@ -48,12 +49,32 @@ get "/login" do
   erb :login
 end
 
-post "/login_auth/" do
+get "/user/new" do
+  erb :new_user
+end
+
+post "/user/register" do
+  password_key = BCrypt::Password.create(params[:password])
+  params[:password] = password_key
+  @user = User.new(params)
+  
+  if @user.save
+    redirect "/login"
+  else
+    redirect "/user/new"
+  end
+end
+
+post "/login/auth" do
   @user = User.find_by_name(params[:name])
   
-  if @user.password == params[:password]
+  if @user
+    if BCrypt::Password.new(@user.password) == params[:password]
     session[:user_id] = @user.id
     redirect "/"
+    else
+    redirect "/login"
+    end
   else
     redirect "/login"
   end
