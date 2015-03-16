@@ -25,7 +25,7 @@ end
 
 get "/" do 
   @slide_count = Slide.all.length
-
+  binding.pry
   erb :homepage
 end
 

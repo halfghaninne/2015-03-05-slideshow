@@ -12,23 +12,16 @@
     <p>Hey <%= @user.name %></p>
     <% else %>
     <a href="/login" class="login_link">Click here to login</a><br>
-    <% end %>
+    <% end %>     
     
-    <!-- <div class="login" style="display: none">
-      <form action="/login_auth"> 
-        <input></input>
-        <input></input>
-      </form>
+    <div class="slidebox">
+      <h1 id="title"></h1>
+      <p id="body"></p>
     </div>
-     <div class="slidebox">
-       <h1 id="title"></h1>
-       <p id="body"></p>
-     </div> -->
-     
       
-      <a href="javascript:void(0)" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
+      <a href="#" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
       
-      <a href="javascript:void(0)" id="next" value ="<%= @slide_count %>" onclick="getNextPage()"> Next </a>
+      <a href="#" id="next" value ="<%= @slide_count %>" onclick="getNextPage()"> Next </a>
     
   </body>
 </html>
