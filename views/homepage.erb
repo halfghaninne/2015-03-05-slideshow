@@ -8,10 +8,10 @@
     <h3>Practice Slideshow</h3>
     <p>The current time is <strong><%= Time.now %></strong>.</p>
     
-    <% if  @user.id == nil %>
-    <a href="/login" class="login_link">Click here to login</a><br>
-    <% else %>
+    <% if  @user %>
     <p>Hey <%= @user.name %></p>
+    <% else %>
+    <a href="/login" class="login_link">Click here to login</a><br>
     <% end %>
     
     <!-- <div class="login" style="display: none">
