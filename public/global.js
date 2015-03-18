@@ -43,6 +43,13 @@ window.onload = function() {    //this notation may be problematic later
   
   getNext.addEventListener("click", getNextPage); //runs function on click of HTML anchor element
   getPrevious.addEventListener("click", getPreviousPage);
+  
+  var logInCheck = document.getElementsByTagName("body")[0];
+  if (logInCheck.classList.contains("active")) {
+    var user = true ;
+  }
+  
+  console.log(user)
 
   function getNextPage() {
     if (user) {
@@ -63,7 +70,7 @@ window.onload = function() {    //this notation may be problematic later
   } //end of getNextPage
   
   function getPreviousPage() {
-    if (user) {}
+    if (user) {
       currentSlide --
       if (currentSlide < 1) {
         currentSlide = slideCount

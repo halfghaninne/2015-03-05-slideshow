@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="global.js">
-      var user = <%= @user || 'null' %>;
-    </script>
+    <script type="text/javascript" src="global.js"></script>
     <link rel="stylesheet" href="/style.css" type="text/css"            charset="utf-8">
     <title>Practice Slideshow</title>
   </head>
-  <body>
+  <body class="<%= 'active' if @user %>">
     
     <div>
       <h3>Practice Slideshow</h3>
@@ -42,9 +40,9 @@
     </div>
       
     <div class="slide_nav">
-      <a href="#" id="previous" value = "<%= @slide_count %> onclick="getPreviousPage()">Previous</a>
+      <a href="#" id="previous" value = "<%= @slide_count %>">Previous</a>
       
-      <a href="#" id="next" value ="<%= @slide_count %>" onclick="getNextPage()"> Next </a>
+      <a href="#" id="next" value ="<%= @slide_count %>"> Next </a>
     </div>
     
     
