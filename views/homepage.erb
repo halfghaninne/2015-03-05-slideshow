@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="global.js"></script>
+    <script type="text/javascript" src="global.js">
+      var user = <%= @user || 'null' %>;
+    </script>
     <link rel="stylesheet" href="/style.css" type="text/css"            charset="utf-8">
     <title>Practice Slideshow</title>
   </head>

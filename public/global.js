@@ -45,34 +45,38 @@ window.onload = function() {    //this notation may be problematic later
   getPrevious.addEventListener("click", getPreviousPage);
 
   function getNextPage() {
-    currentSlide ++
-    if (currentSlide > slideCount) {
-      currentSlide = 1
-    } //end of if loop
+    if (user) {
+      currentSlide ++
+      if (currentSlide > slideCount) {
+        currentSlide = 1
+      } //end of if loop
 
-    var request = new XMLHttpRequest;
+      var request = new XMLHttpRequest;
 
-    request.open("post", "/slide/" + currentSlide);
+      request.open("post", "/slide/" + currentSlide);
 
-    request.send();
+      request.send();
 
-    request.addEventListener("load", singleSlideParse);
+      request.addEventListener("load", singleSlideParse);
+    } //end of if loop - user check
 
   } //end of getNextPage
   
   function getPreviousPage() {
-    currentSlide --
-    if (currentSlide < 1) {
-      currentSlide = slideCount
-    } //end of if loop
+    if (user) {}
+      currentSlide --
+      if (currentSlide < 1) {
+        currentSlide = slideCount
+      } //end of if loop
 
-    var request = new XMLHttpRequest;
+      var request = new XMLHttpRequest;
 
-    request.open("post", "/slide/" + currentSlide);
+      request.open("post", "/slide/" + currentSlide);
 
-    request.send();
+      request.send();
 
-    request.addEventListener("load", singleSlideParse);
+      request.addEventListener("load", singleSlideParse);
+    } // end of if loop - user check
 
   } //end of getPreviousPage
   
